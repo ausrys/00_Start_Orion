@@ -1,5 +1,3 @@
-
-
 def uppercase_decorator(func):
     def wrapper(*args, **kwargs):
         result = func(*args, **kwargs)
@@ -8,8 +6,6 @@ def uppercase_decorator(func):
 
 
 @uppercase_decorator
-
-
 def get_input(input: str):
     return input
 
