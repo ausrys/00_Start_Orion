@@ -5,7 +5,7 @@ from functools import lru_cache
 class Fibo:
 
     def __init__(self, iterations: int) -> None:
-        self.iterrations = iterations
+        self.iterations = iterations
 
     @lru_cache(maxsize=None)
 
@@ -19,11 +19,10 @@ class Fibo:
     def display_sequence(self):
 
         # Check if the number of iterations is valid
-        if type(self.iterrations) != int or self.iterrations <= 0:
-            print("Plese enter a positive integer")
-            return
+        if type(self.iterations) != int or self.iterations <= 0:
+            raise ValueError("Error: Invalid input, provide a number that is type of integer and is equal or greater than 1")
         print("Fibonacci sequence:")
-        for i in range(self.iterrations):
+        for i in range(self.iterations):
             print(self.recur_fibo(i))
  
 
