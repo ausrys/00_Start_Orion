@@ -1,6 +1,7 @@
 import unittest
 from fibo import Fibo
 
+
 class TestFibo(unittest.TestCase):
     
     def test_fibo_base_case(self):
@@ -21,5 +22,7 @@ class TestFibo(unittest.TestCase):
         fibo = Fibo(0)
         with self.assertRaises(ValueError):
             fibo.display_sequence()  # This should raise an error when the iteration is 0 or less
+
+
 if __name__ == '__main__':
     unittest.main()
