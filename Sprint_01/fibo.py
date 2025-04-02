@@ -9,7 +9,6 @@ class Fibo:
 
     @lru_cache(maxsize=None)
     def recur_fibo(self, n: int) -> int:
-
         if n <= 1:
             return n
         else:
