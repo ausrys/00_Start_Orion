@@ -1,0 +1,5 @@
+Describe in short readme file the difference between mutable and immutable types
+
+Immutable types cannot be changed, reorded, values cant be deleted, updated. For example tuples.
+
+Mutable types can be changed, reorded, deleted, added, updated.
