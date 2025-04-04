@@ -9,7 +9,7 @@ class DataReciever:
 
     def get_remote_data(self):
         # Get data from URL
-        page_data = requests.get(self.url)
+        page_data = requests.get(self.url, timeout=10)
         return page_data.text
 
     def clean_data(self):
