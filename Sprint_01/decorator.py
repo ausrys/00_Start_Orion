@@ -14,8 +14,8 @@ def text_conact_decorator(func):
 
 @uppercase_decorator
 @text_conact_decorator
-def get_input(input: str):
-    return input
+def get_input(input_text: str):
+    return input_text
 
 
 print(get_input("Test message"))
