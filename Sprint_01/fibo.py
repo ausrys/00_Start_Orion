@@ -1,21 +1,22 @@
 # Python program to display the Fibonacci sequence
-def odd_return_decorator(func):
-    def wrapper(self, n):
-        result = func(self, n)
-        if result % 2 != 0:  # Check if the result is odd
-            return result
-            # If the result is even, return the next Fibonacci number
-        return func(self, n + 1) if n + 1 <= self.iterations else result
+def log_odd_numbers(func):
+    # This decorator will log only odd Fibonacci numbers
+    def wrapper(*args, **kwargs):
+        result = func(*args, **kwargs)
+        if result % 2 == 0:  # Check if the number is odd
+            print("Not an odd number")
+        else:
+            print(result)
+        return result
     return wrapper
 
 
 class Fibo:
 
-    def __init__(self, iterations: int) -> None:
-        self.iterations = iterations
+    def __init__(self) -> None:
         self.cache: dict = {}
 
-    # @odd_return_decorator  # Apply the decorator to recur_fibo
+    @log_odd_numbers
     def recur_fibo(self, n: int) -> int:
         # Check if the value is already cached
         if n in self.cache:
@@ -24,18 +25,11 @@ class Fibo:
         if n <= 1:
             return n
         # Compute and cache the Fibonacci value
-        self.cache[n] = self.recur_fibo(n - 1) + self.recur_fibo(n - 2)
+        result = self.recur_fibo(n - 1) + self.recur_fibo(n - 2)
+        self.cache[n] = result
         return self.cache[n]
 
-    def display_sequence(self):
-        # Check if the number of iterations is valid
-        if not isinstance(self.iterations, int) or self.iterations <= 0:
-            raise ValueError("Error: Invalid input, provide a number that is\
-                            type of integer and is equal or greater than 1")
-        # print("Fibonacci sequence:")
-        for i in range(self.iterations):
-            print(self.recur_fibo(i))
 
-
-Fibonaci: Fibo = Fibo(10)
-Fibonaci.display_sequence()
+Fibonaci: Fibo = Fibo()
+for number in range(1, 10):
+    Fibonaci.recur_fibo(number)
