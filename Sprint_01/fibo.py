@@ -4,9 +4,8 @@ def odd_return_decorator(func):
         result = func(self, n)
         if result % 2 != 0:  # Check if the result is odd
             return result
-        else:
             # If the result is even, return the next Fibonacci number
-            return func(self, n + 1) if n + 1 <= self.iterations else result
+        return func(self, n + 1) if n + 1 <= self.iterations else result
     return wrapper
 
 
@@ -24,10 +23,9 @@ class Fibo:
 
         if n <= 1:
             return n
-        else:
-            # Compute and cache the Fibonacci value
-            self.cache[n] = self.recur_fibo(n - 1) + self.recur_fibo(n - 2)
-            return self.cache[n]
+        # Compute and cache the Fibonacci value
+        self.cache[n] = self.recur_fibo(n - 1) + self.recur_fibo(n - 2)
+        return self.cache[n]
 
     def display_sequence(self):
         # Check if the number of iterations is valid
