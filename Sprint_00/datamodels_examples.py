@@ -34,11 +34,11 @@ def process_string_tuple_bytes(input_string, char_tuple):
 
 
 # Example usage:
-input_string = "Hello"
-char_tuple = (' ', 'W', 'o', 'r', 'l', 'd')
+EXAMPLE_STRING = "Hello"
+CHAR_TUPLE = (' ', 'W', 'o', 'r', 'l', 'd')
 
-result = process_string_tuple_bytes(input_string, char_tuple)
-print("Final Result:", result)
+RESULT = process_string_tuple_bytes(EXAMPLE_STRING, CHAR_TUPLE)
+print("Final Result:", RESULT)
 
 
 # Node class for Linked List
