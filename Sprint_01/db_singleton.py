@@ -17,6 +17,13 @@ class DatabaseSingleton:
                 cls._instance.cursor = cls._instance.connection.cursor()
         return cls._instance
 
+    def __init__(self, db_name):
+        # Initialize these attributes only if they are not set
+        if not hasattr(self, 'connection'):
+            self.db_name = db_name
+            self.connection = sqlite3.connect(db_name)
+            self.cursor = self.connection.cursor()
+
     def get_cursor(self):
         return self.cursor
 
