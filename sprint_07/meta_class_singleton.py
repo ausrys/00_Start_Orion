@@ -31,5 +31,6 @@ def main():
 
     print("Config1 is Config2?", config1 is config2)  # True
 
+
 if __name__ == "__main__":
     main()
