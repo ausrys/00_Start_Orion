@@ -10,7 +10,7 @@ def test_search_success(monkeypatch):
     monkeypatch.setattr("app.grab_text_from_url", mock_grab_text)
 
     response = client.post(
-        "/search", json={"url": "https://examplle.com", "search": "example"})
+        "/search", json={"url": "https://example.com", "search": "example"})
     assert response.status_code == 200
     assert "matches" in response.json()
     assert any("example" in m.lower() for m in response.json()["matches"])
