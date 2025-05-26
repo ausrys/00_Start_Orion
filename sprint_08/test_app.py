@@ -5,7 +5,7 @@ client = TestClient(app)
 
 
 def test_search_success(monkeypatch):
-    def mock_grab_text(url: str):
+    def mock_grab_text(_: str):
         return "This is an example page with some content. example text here."
     monkeypatch.setattr("app.grab_text_from_url", mock_grab_text)
 
@@ -17,7 +17,7 @@ def test_search_success(monkeypatch):
 
 
 def test_search_not_found(monkeypatch):
-    def mock_grab_text(url: str):
+    def mock_grab_text(_: str):
         return "No relevant content here."
     monkeypatch.setattr("app.grab_text_from_url", mock_grab_text)
 
