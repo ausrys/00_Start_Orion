@@ -33,7 +33,7 @@ Sprint 9
 Task 46
 
 1. Solve two simple task on the leetcode and commit it to the git
-2. Create and deploy the structure on the Localstak
+2. Create and deploy the structure on the Localstak, Stack and AWS lambdas should done with Python 3.11
    1. API GW should receive the GET requests (ONLY Get). In case other request should be generated HTML/TEXT responce with error
    2. GET Lambda should check Authorize and check the JSON validation:
       {"user_action": "summarize",
